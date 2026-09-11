@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:15
+    container_name: rensa_db
+    environment:
+      POSTGRES_USER: rensa_user
+      POSTGRES_PASSWORD: rensa_password
+      POSTGRES_DB: rensa_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+  
+  volume:
+    postgres_data:
